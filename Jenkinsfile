@@ -18,7 +18,6 @@ pipeline {
                         url: 'https://github.com/Sicario7297/docker-test.git'
             }
         }
-    }
         stage('Building our image') { 
             steps { 
                 script { 
@@ -26,4 +25,5 @@ pipeline {
                 }
             } 
         }
+    }
 }
