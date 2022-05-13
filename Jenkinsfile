@@ -12,11 +12,6 @@ pipeline {
     }
        
     stages {
-        stage ('Configure credentials') {
-            steps { sh 'git config user.email "ivo.lazarov.97@icloud.com"'
-                    sh 'git config user.name "Sicario7297"'
-            }
-        }
         stage ('Cloning our Git') {
             steps { git branch: 'master',
                         credentialsId: 'github-password',
