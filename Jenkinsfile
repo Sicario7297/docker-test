@@ -10,6 +10,8 @@ pipeline {
             label 'kubeagent'
         }
     }
+       
+    stages {
         stage ('Cloning our Git') {
             steps { git branch: 'main',
                         credentialsId: 'github-pass',
@@ -24,4 +26,4 @@ pipeline {
             } 
         }
     }
-
+}
