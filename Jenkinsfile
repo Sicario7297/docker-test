@@ -4,19 +4,19 @@ pipeline {
         registryCredential = 'dockerhub_id'
         dockerImage = 'ubuntu:latest'
         }
+    
     agent { 
         node {
             label 'kubeagent'
         }
     }
-     stages {
+       
+    stages {
         stage ('Configure credentials') {
             steps { sh 'git config user.email "ivo.lazarov.97@icloud.com"'
                     sh 'git config user.name "Sicario7297"'
             }
         }
-    }       
-    stages {
         stage ('Cloning our Git') {
             steps { git branch: 'master',
                         credentialsId: 'github-password',
