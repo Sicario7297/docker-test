@@ -14,4 +14,4 @@ pipeline {
             steps { 'git@github.com:Sicario7297/docker-test.git'
             }
         }
-                
+    }       
