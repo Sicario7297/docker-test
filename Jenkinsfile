@@ -1,4 +1,4 @@
-"""pipeline {
+pipeline {
     environment {
         registry = "51c4r10/testing"
         registryCredential = 'dockerhub_id'
@@ -10,6 +10,13 @@
             label 'kubeagent'
         }
     }
+    
+    stages {
+         stage ('Initialize') {
+                def dockerHome = tool 'myDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
+        }
        
     stages {
         stage ('Cloning our Git') {
@@ -27,14 +34,4 @@
         }
     }
 }
-"""
 
-pipeline {
-    agent { docker { image 'maven:latest' } }
-    stages {
-         stage('Initialize'){
-                def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-        }
-    }
-}
