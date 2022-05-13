@@ -11,7 +11,9 @@ pipeline {
     } 
     stages {
         stage ('Cloning our Git') {
-            steps { 'ssh://git@github.com:Sicario7297/docker-test.git'
+            steps { git branch: 'master',
+                        credentialsId: 'github-access-token',
+                        url:'ssh://git@github.com:Sicario7297/docker-test.git'
             }
         }
     }       
