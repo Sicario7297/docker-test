@@ -1,4 +1,4 @@
-pipeline {
+"""pipeline {
     environment {
         registry = "51c4r10/testing"
         registryCredential = 'dockerhub_id'
@@ -24,6 +24,19 @@ pipeline {
                     dockerImage = docker.build registry + ":1" 
                 }
             } 
+        }
+    }
+}
+"""
+
+pipeline {
+    agent { docker { image 'maven:latest' } }
+    stages {
+        stage('log version info') {
+            steps {
+                sh 'mvn --version'
+                sh 'mvn clean install'
+            }
         }
     }
 }
