@@ -10,13 +10,6 @@ pipeline {
             label 'kubeagent'
         }
     }
-       
-    stages {
-        stage('Initialize'){
-        def dockerHome = tool 'Docker Engine'
-        env.PATH = "/usr/bin/docker"
-        }
-    }
         stage ('Cloning our Git') {
             steps { git branch: 'main',
                         credentialsId: 'github-pass',
