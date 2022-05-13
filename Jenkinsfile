@@ -8,7 +8,14 @@ pipeline {
         node {
             label 'kubeagent'
         }
-    } 
+    }
+     stages {
+        stage ('Configure credentials') {
+            steps { sh 'git config user.email "ivo.lazarov.97@icloud.com"'
+                    sh 'git config user.name "Sicario7297"'
+            }
+        }
+    }       
     stages {
         stage ('Cloning our Git') {
             steps { git branch: 'master',
