@@ -11,7 +11,7 @@ pipeline {
     } 
     stages {
         stage ('Cloning our Git') {
-            steps { 'git@github.com:Sicario7297/docker-test.git'
+            steps { 'ssh://git@github.com:Sicario7297/docker-test.git'
             }
         }
     }       
