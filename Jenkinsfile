@@ -15,7 +15,7 @@ pipeline {
         stage ('Cloning our Git') {
             steps { git branch: 'master',
                         credentialsId: 'github-pass',
-                        url: 'https://github.com:Sicario7297/docker-test.git'
+                        url: 'https://github.com/Sicario7297/docker-test.git'
             }
         }
     }       
