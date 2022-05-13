@@ -1,9 +1,9 @@
 pipeline {
-    //environment {
-      //  registry = "https://hub.docker.com/repository/docker/51c4r10/testing"
-        //registryCredential = 'dockerhub_id'
-        //dockerImage = 'ubuntu:latest'
-        //}
+    environment {
+        registry = "https://hub.docker.com/repository/docker/51c4r10/testing"
+        registryCredential = 'dockerhub_id'
+        dockerImage = 'ubuntu:latest'
+        }
     
     agent { 
         node {
