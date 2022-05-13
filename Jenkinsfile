@@ -18,10 +18,7 @@ pipeline {
                         url: 'https://github.com/Sicario7297/docker-test.git'
             }
         }
-        """stage ('Initialize') {
-                def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }"""
+        
         stage ('Building our image') { 
             steps { 
                 script { 
