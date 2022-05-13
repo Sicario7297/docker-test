@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Initialize'){
         def dockerHome = tool 'Docker Engine'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
+        env.PATH = "${which docker}/bin:${env.PATH}"
     }
         stage ('Cloning our Git') {
             steps { git branch: 'main',
