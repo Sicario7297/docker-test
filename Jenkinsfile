@@ -8,8 +8,8 @@ pipeline {
     """agent { 
         node {
             label 'kubeagent'
-        }"""
-    }
+        }
+    }"""
        
     stages {
         stage ('Cloning our Git') {
