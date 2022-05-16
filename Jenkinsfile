@@ -4,12 +4,6 @@ pipeline {
         registryCredential = 'dockerhub_id'
         dockerImage = 'ubuntu'
         }
-    
-    """agent { 
-        node {
-            label 'kubeagent'
-        }
-    }"""
        
     stages {
         stage ('Cloning our Git') {
