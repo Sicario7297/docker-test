@@ -5,10 +5,10 @@ pipeline {
         dockerImage = 'ubuntu'
         }
     
-    agent { 
+    """agent { 
         node {
             label 'kubeagent'
-        }
+        }"""
     }
        
     stages {
