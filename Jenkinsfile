@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'kubeagent'
+            label 'java-docker-slave'
         }
     } 
     environment {
