@@ -1,4 +1,9 @@
 pipeline {
+    agent { 
+        node {
+            label 'kubeagent'
+        }
+    } 
     environment {
         registry = "51c4r10/testing"
         registryCredential = 'dockerhub_id'
